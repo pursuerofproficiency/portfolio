@@ -1,27 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const links = [
     
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'projects' },
+    
     { name: 'Experience', to: 'experience' },
     { name: 'Education', to: 'education' },
     { name: 'Achievements', to: 'achievements' },
     { name: 'Contact', to: 'contact' },
   ];
 
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 text-white">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-black/60 backdrop-blur-md shadow-md'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
         <h1 className="text-2xl font-bold tracking-tight">DEVESH TRIPATHI</h1>
 
-        {/* Desktop Menu */}
+        {/* Desktop Links */}
         <ul className="hidden md:flex space-x-8">
           {links.map((link) => (
             <li key={link.name}>
@@ -38,7 +60,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Icon */}
         <div
           className="md:hidden text-2xl cursor-pointer"
           onClick={() => setNavOpen(!navOpen)}
@@ -47,7 +69,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Slide-In Menu */}
+      {/* Mobile Slide-in Menu */}
       <AnimatePresence>
         {navOpen && (
           <motion.ul
@@ -65,7 +87,7 @@ const Navbar = () => {
                   duration={500}
                   offset={-60}
                   onClick={() => setNavOpen(false)}
-                  className="text-lg hover:text-cyan-400 cursor-pointer transition"
+                  className="text-lg hover:text-cyan-400 cursor-pointer"
                 >
                   {link.name}
                 </Link>
@@ -79,6 +101,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 
 
