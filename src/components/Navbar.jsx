@@ -1,52 +1,36 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const Navbar = () => {
+  const [navOpen, setNavOpen] = useState(false);
 
   const links = [
-    { name: "About", to: "about" },
-    { name: "Projects", to: "projects" },
-    { name: "Experience", to: "experience" },
-    { name: "Education", to: "education" },
-    { name: "Achievements", to: "achievements" },
-    { name: "Contact", to: "contact" },
+    { name: 'Home', to: 'hero' },
+    { name: 'About', to: 'about' },
+    { name: 'Projects', to: 'projects' },
+    { name: 'Education', to: 'education' },
+    { name: 'Experience', to: 'experience' },
+    { name: 'Achievements', to: 'achievements' },
+    { name: 'Contact', to: 'contact' },
   ];
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/70 backdrop-blur-md shadow-md"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 text-white">
-        <h1 className="text-xl font-bold">Devesh</h1>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-60 backdrop-blur-sm shadow-md text-white">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 font-medium">
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
           {links.map((link) => (
-            <li key={link.to} className="hover:text-blue-400 transition duration-200">
+            <li key={link.name}>
               <Link
                 to={link.to}
                 smooth={true}
-                offset={-70}
                 duration={500}
-                className="cursor-pointer"
+                offset={-60}
+                className="cursor-pointer hover:text-cyan-400 transition"
               >
                 {link.name}
               </Link>
@@ -54,34 +38,42 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger */}
-        <div className="md:hidden text-xl" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
+        {/* Mobile Toggle */}
+        <div className="md:hidden text-2xl cursor-pointer" onClick={() => setNavOpen(!navOpen)}>
+          {navOpen ? <FiX /> : <FiMenu />}
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur text-white px-6 py-6 space-y-4">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="block text-base font-medium hover:text-blue-400"
-              onClick={closeMenu}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      )}
+      {/* Mobile Menu Slide-In */}
+      <AnimatePresence>
+        {navOpen && (
+          <motion.ul
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed top-0 right-0 h-full w-64 bg-black bg-opacity-95 flex flex-col items-start p-6 space-y-6 md:hidden z-50"
+          >
+            {links.map((link) => (
+              <li key={link.name}>
+                <Link
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-60}
+                  className="text-lg text-white hover:text-cyan-400"
+                  onClick={() => setNavOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
-}
-<<<<<<< HEAD
+};
 
-=======
->>>>>>> 7c2a3f7f347290d45aaafdc907679305350277ca
+export default Navbar;
+
