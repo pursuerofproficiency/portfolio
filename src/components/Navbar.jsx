@@ -17,12 +17,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-60 backdrop-blur-sm shadow-md text-white">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-sm text-white">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-8">
           {links.map((link) => (
             <li key={link.name}>
               <Link
@@ -38,13 +38,13 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden text-2xl cursor-pointer" onClick={() => setNavOpen(!navOpen)}>
           {navOpen ? <FiX /> : <FiMenu />}
         </div>
       </div>
 
-      {/* Mobile Menu Slide-In */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {navOpen && (
           <motion.ul
@@ -52,7 +52,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-64 bg-black bg-opacity-95 flex flex-col items-start p-6 space-y-6 md:hidden z-50"
+            className="fixed top-0 right-0 h-full w-64 bg-black/90 text-white backdrop-blur-md p-6 flex flex-col space-y-6 z-50 md:hidden"
           >
             {links.map((link) => (
               <li key={link.name}>
@@ -61,8 +61,8 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   offset={-60}
-                  className="text-lg text-white hover:text-cyan-400"
                   onClick={() => setNavOpen(false)}
+                  className="text-lg hover:text-cyan-400 cursor-pointer"
                 >
                   {link.name}
                 </Link>
@@ -72,6 +72,11 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+  );
+};
+
+export default Navbar;
+
   );
 };
 
