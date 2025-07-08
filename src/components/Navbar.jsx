@@ -81,4 +81,7 @@ export default function Navbar() {
     </nav>
   );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c2a3f7f347290d45aaafdc907679305350277ca
