@@ -17,8 +17,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent md:bg-black/30 md:backdrop-blur-sm text-white transition duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent text-white">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center backdrop-blur-lg bg-transparent/10 rounded-b-lg shadow-sm transition-all duration-300">
         <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
 
         {/* Desktop Menu */}
@@ -30,7 +30,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className="cursor-pointer hover:text-cyan-400 transition"
+                className="cursor-pointer hover:text-cyan-400 transition duration-300"
               >
                 {link.name}
               </Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Slide-In Menu */}
       <AnimatePresence>
         {navOpen && (
           <motion.ul
@@ -65,7 +65,7 @@ const Navbar = () => {
                   duration={500}
                   offset={-60}
                   onClick={() => setNavOpen(false)}
-                  className="text-lg hover:text-cyan-400 cursor-pointer"
+                  className="text-lg hover:text-cyan-400 cursor-pointer transition"
                 >
                   {link.name}
                 </Link>
@@ -77,6 +77,9 @@ const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;
+
 
 export default Navbar;
 
