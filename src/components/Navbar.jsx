@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const links = [
-    
+    { name: 'Home', to: 'hero' },
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'projects' },
     { name: 'Education', to: 'education' },
@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-sm text-white">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent md:bg-black/30 md:backdrop-blur-sm text-white transition duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
 
