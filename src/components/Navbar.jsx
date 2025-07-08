@@ -7,6 +7,7 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const links = [
+    
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'projects' },
     { name: 'Education', to: 'education' },
@@ -38,7 +39,10 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden text-2xl cursor-pointer" onClick={() => setNavOpen(!navOpen)}>
+        <div
+          className="md:hidden text-2xl cursor-pointer"
+          onClick={() => setNavOpen(!navOpen)}
+        >
           {navOpen ? <FiX /> : <FiMenu />}
         </div>
       </div>
@@ -75,6 +79,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 
 
