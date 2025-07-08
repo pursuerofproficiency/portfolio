@@ -17,8 +17,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent text-white">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center backdrop-blur-lg bg-transparent/10 rounded-b-lg shadow-sm transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 text-white">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold tracking-tight">DEVESH TRIPATHI</h1>
 
         {/* Desktop Menu */}
@@ -55,7 +55,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-64 bg-black/90 text-white backdrop-blur-md p-6 flex flex-col space-y-6 z-50 md:hidden"
+            className="fixed top-0 right-0 h-full w-64 bg-black/90 text-white p-6 flex flex-col space-y-6 z-50 md:hidden"
           >
             {links.map((link) => (
               <li key={link.name}>
