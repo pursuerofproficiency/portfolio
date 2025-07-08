@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const links = [
-    { name: 'Home', to: 'hero' },
+    
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'projects' },
     { name: 'Education', to: 'education' },
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center backdrop-blur-lg bg-transparent/10 rounded-b-lg shadow-sm transition-all duration-300">
-        <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
+        <h1 className="text-2xl font-bold tracking-tight">DEVESH TRIPATHI</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8">
