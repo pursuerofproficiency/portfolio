@@ -12,20 +12,19 @@ const projects = [
     
   },
   {
-    title: "Market Basket & Price Optimization",
-    role: "Product Manager / Business Analyst",
+    title: "Feature Usage Impact Dashboard",
+    role: "Product Manager / Data Analyst",
     description:
-      "Applied association rule mining to find frequently bought products. Built a price elasticity model to optimize pricing strategies.",
-    tech: ["Python", "MLxtend", "Seaborn", "SQL"],
-    github: "https://github.com/example/market-basket",
-    live: "https://market-basket-app.vercel.app",
+      "Merged user and usage data to label feature adoption. Performed revenue analysis and built a Tableau dashboard to visualize business impact and usage trends.",
+    tech: ["Python", "Pandas", "Scipy", "Matplotlib", "Tableau"],
+    github: "https://github.com/pursuerofproficiency/featureimpactanalysis",
   },
   {
     title: "Demand Forecasting & Inventory Optimization",
     role: "Supply Chain Analyst / Data Analyst",
     description:
       "Forecasted demand using ARIMA and Prophet, and built an inventory optimization model to reduce holding and stockout costs.",
-    tech: ["Python", "Prophet", "ARIMA", "PuLP"],
+    tech: ["Python", "Pandas", "Scipy", "Matplotlib", "Tableau"],
     github: "https://github.com/example/forecasting-inventory",
     live: "https://forecast-optimizer.app",
   },
