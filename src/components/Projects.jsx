@@ -74,7 +74,13 @@ export default function Projects() {
             </div>
 
             <div className="mt-2 flex gap-4">
-              
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition"
+              >
+                Live Demo
               </a>
               <a
                 href={project.github}
