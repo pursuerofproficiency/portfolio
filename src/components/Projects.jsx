@@ -3,12 +3,15 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Customer Churn & Sentiment Analysis",
-    role: "Business Analyst / Data Analyst",
-    description:
-      "Predicted customer churn using logistic regression and performed sentiment analysis using NLP to uncover dissatisfaction drivers. Visualized insights in Power BI dashboards.",
-    tech: ["Python", "Pandas", "NLTK", "scikit-learn", "Power BI"],
-    github: "https://github.com/pursuerofproficiency/churnanalysis",
+    {
+  title: "Sales Forecasting with Time Series Models",
+  role: "Data Analyst / Forecasting Analyst",
+  description:
+    "Forecasted product sales using models like ARIMA, SARIMA, Holt-Winters, and Linear Regression. Identified the best model through RMSE evaluation, highlighting linear regression's effectiveness in seasonal-trend data.",
+  tech: ["Python", "Pandas", "NumPy", "statsmodels", "scikit-learn", "Matplotlib"],
+  github: "https://github.com/pursuerofproficiency/ML_salesforecasting"
+}
+
     
   },
   {
@@ -20,13 +23,12 @@ const projects = [
     github: "https://github.com/pursuerofproficiency/featureimpactanalysis",
   },
   {
-    title: "Demand Forecasting & Inventory Optimization",
+    title: "Supply Chain Analysis- Capstone Project",
     role: "Supply Chain Analyst / Data Analyst",
     description:
-      "Forecasted demand using ARIMA and Prophet, and built an inventory optimization model to reduce holding and stockout costs.",
-    tech: ["Python", "Pandas", "Scipy", "Matplotlib", "Tableau"],
-    github: "https://github.com/example/forecasting-inventory",
-    live: "https://forecast-optimizer.app",
+      "Optimized supply chain operations by analyzing sales, logistics, and inventory data using Python, MySQL, and Power BI; delivered insights that improved profitability and reduced costs.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "MySQL", "Power BI"],
+    github: "https://github.com/pursuerofproficiency/supplychaincapstone-project",
   },
 ];
 
@@ -72,13 +74,7 @@ export default function Projects() {
             </div>
 
             <div className="mt-2 flex gap-4">
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition"
-              >
-                Live Demo
+              
               </a>
               <a
                 href={project.github}
