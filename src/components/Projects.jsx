@@ -69,18 +69,17 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="mt-2 flex gap-4">
-              
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition"
-              >
-                Code
-              </a>
-            </div>
+           <div className="mt-2">
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sm px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition"
+  >
+    Code
+  </a>
+</div>
+
           </motion.div>
         ))}
       </div>
