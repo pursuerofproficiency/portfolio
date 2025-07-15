@@ -2,14 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const projects = [
-  {
     {
   title: "Sales Forecasting with Time Series Models",
   role: "Data Analyst / Forecasting Analyst",
   description:
     "Forecasted product sales using models like ARIMA, SARIMA, Holt-Winters, and Linear Regression. Identified the best model through RMSE evaluation, highlighting linear regression's effectiveness in seasonal-trend data.",
   tech: ["Python", "Pandas", "NumPy", "statsmodels", "scikit-learn", "Matplotlib"],
-  github: "https://github.com/pursuerofproficiency/ML_salesforecasting"
+  github: "https://github.com/pursuerofproficiency/ML_salesforecasting",
 },
   {
     title: "Feature Usage Impact Dashboard",
