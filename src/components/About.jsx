@@ -42,7 +42,7 @@ export default function About() {
           </p>
 
           <motion.a
-            href="/resume.pdf"
+            href="/AnalystDT.pdf"
             whileHover={{ scale: 1.05 }}
             className="mt-8 inline-block border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition text-sm font-medium"
           >
