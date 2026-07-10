@@ -1,9 +1,9 @@
 import React from 'react';
 const LearningSprint = () => {
   const sprints = [
-    { skill: "SQL", progress: "Advanced Joins & Aggregates", color: "bg-blue-500" },
-    { skill: "Excel", progress: "Pivot Tables & Data Visualization", color: "bg-green-500" },
-    { skill: "Growth Strategy", progress: "Applying User Psychology to Ad Copy", color: "bg-purple-500" }
+    { skill: "SQL", progress: "I am moving beyond basic syntax to master complex data manipulation techniques essential for business analysis. My focus is on writing efficient queries that aggregate massive datasets from fragmented sources. I have successfully implemented Joins and Subqueries to link disparate tables, which is critical for maintaining data integrity in supply chain management. By optimizing these queries, I can drastically reduce processing time for real-time reporting. This technical capability allows me to transform raw database entries into actionable business insights that drive strategic decision-making.", color: "bg-blue-500" },
+    { skill: "Excel", progress: "I utilize Excel as a powerful business intelligence tool to model complex scenarios and visualize operational performance. My workflow emphasizes the use of Pivot Tables and VLOOKUPs to quickly identify trends and anomalies within large-scale inventory logs. I build dynamic dashboards that track Key Performance Indicators (KPIs), enabling stakeholders to monitor supply chain health at a glance. Beyond just data entry, I focus on constructing automated models that can scale with business growth. This expertise ensures that I can bridge the gap between technical data outputs and the strategic needs of management.", color: "bg-green-500" },
+    { skill: "Growth Strategy", progress: "I am actively applying psychological principles and data-backed insights to craft high-conversion marketing communications. My strategy involves identifying overlooked customer segments and tailoring value-based narratives that resonate with their specific needs. I use the feedback loops from my current sales experience to refine my top-of-funnel conversion tactics continuously. By analyzing engagement metrics, I am learning how to optimize ad spend and maximize customer lifetime value effectively. This holistic approach ensures that my growth initiatives are not only creative but also grounded in measurable business outcomes.", color: "bg-purple-500" }
   ];
   return (
     <section className="py-12 bg-black border-t border-gray-800">
