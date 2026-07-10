@@ -8,7 +8,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import LearningSprint from './components/LearningSprint';
 import Achievements from "./components/Achievements";
-import TargetRoles from "./components/targetroles";
+import TargetRoles from "./components/TargetRoles";
 import Contact from "./components/Contact";
 
 export default function App() {
