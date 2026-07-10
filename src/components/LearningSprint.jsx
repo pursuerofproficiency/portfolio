@@ -12,7 +12,8 @@ const LearningSprint = () => {
         <p className="text-gray-400 mb-8 max-w-2xl">
           Coming from a background in Mechanical Engineering, I am applying the same 
           analytical rigor to digital systems. I'm currently on a deep-dive to master 
-          the data tools that drive modern growth.
+          the data tools that drive modern growth. I have always been analysing things around 
+          and trying to increase the efficiency of systems and now, I am trying to master the art.
         </p>
         
         <div className="grid gap-6 md:grid-cols-3">
@@ -27,7 +28,7 @@ const LearningSprint = () => {
         
         <div className="mt-8 p-4 bg-neutral-900 border border-gray-800 rounded-lg text-center">
           <p className="text-gray-300 font-medium">
-            Currently building a new dashboard. <span className="text-pink-400 cursor-pointer hover:underline">Ask me about it!</span>
+            Currently enjoying learning and constantly updating this dashboard. <span className="text-pink-400 cursor-pointer hover:underline">Let's catch up at work!</span>
           </p>
         </div>
       </div>
